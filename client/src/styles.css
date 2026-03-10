@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: 10 12 18;
+  --panel: 16 18 28;
+  --text: 233 236 245;
+  --muted: 160 170 190;
+  --accent: 99 102 241;
+  --accent2: 56 189 248;
+  --ring: 99 102 241;
+}
+
+[data-theme="dark-gold"] {
+  --bg: 6 6 8;
+  --panel: 14 14 18;
+  --text: 246 246 248;
+  --muted: 177 177 190;
+  --accent: 245 158 11;
+  --accent2: 250 204 21;
+  --ring: 245 158 11;
+}
+
+[data-theme="neon-blue"] {
+  --bg: 6 8 20;
+  --panel: 12 16 30;
+  --text: 246 246 248;
+  --muted: 180 195 220;
+  --accent: 34 211 238;
+  --accent2: 59 130 246;
+  --ring: 34 211 238;
+}
+
+[data-theme="forest"] {
+  --bg: 5 20 12;
+  --panel: 8 28 18;
+  --text: 210 255 228;
+  --muted: 140 200 170;
+  --accent: 16 185 129;
+  --accent2: 52 211 153;
+  --ring: 16 185 129;
+}
+
+[data-theme="white"] {
+  --bg: 248 250 252;
+  --panel: 255 255 255;
+  --text: 15 23 42;
+  --muted: 71 85 105;
+  --accent: 37 99 235;
+  --accent2: 99 102 241;
+  --ring: 37 99 235;
+}
+
+[data-theme="cyber-dark"] {
+  --bg: 10 6 20;
+  --panel: 18 10 36;
+  --text: 230 241 255;
+  --muted: 160 160 210;
+  --accent: 56 189 248;
+  --accent2: 168 85 247;
+  --ring: 56 189 248;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: rgb(var(--bg));
+  color: rgb(var(--text));
+}
+
+.glass {
+  background: rgba(var(--panel), 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(14px);
+}
+
+.ring-accent:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(var(--ring), 0.35);
+}
+
+/* Theme dropdown: keep closed control transparent + themed,
+   and ensure the opened menu (options) is readable on all themes. */
+select.theme-select {
+  background: rgba(var(--accent), 0.12);
+  color: rgb(var(--text));
+}
+
+select.theme-select option {
+  background-color: rgb(var(--bg));
+  color: rgb(var(--text));
+}
+
